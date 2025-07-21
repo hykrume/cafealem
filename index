@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Alem Menü</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #7B1E1E;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .special {
+      background: #f8f8f8;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 1rem;
+    }
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem;
+    }
+    .filter-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #3E7C59;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .filter-buttons button:hover {
+      background-color: #2d5e46;
+    }
+    section {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    h2 {
+      color: #3E7C59;
+      border-bottom: 2px solid #3E7C59;
+      padding-bottom: 0.3rem;
+      font-size: 1.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+    .price {
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9em;
+      color: #777;
+      background-color: #f5f5f5;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+      .price {
+        width: 100%;
+        text-align: right;
+      }
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>☕ Cafe Alem Menü</header>
+
+  <div class="special">
+    📣 <strong>Bugünün Önerisi:</strong> Pişmiş Sufle + Latte = <strong>200 TL</strong>
+  </div>
+
+  <div class="filter-buttons">
+    <button onclick="filterMenu('all')">Tümü</button>
+    <button onclick="filterMenu('sicak')">Sıcak İçecekler</button>
+    <button onclick="filterMenu('soguk')">Soğuk İçecekler</button>
+    <button onclick="filterMenu('yiyecek')">Yiyecekler</button>
+    <button onclick="filterMenu('tatli')">Tatlılar</button>
+    <button onclick="filterMenu('pizza')">Pizzalar</button>
+  </div>
+
+  <section class="menu-section sicak">
+    <h2>🥤 Sıcak İçecekler</h2>
+    <ul>
+      <li><span>☕ Çay</span><span class="price">20 TL</span></li>
+      <li><span>🫖 Oralet</span><span class="price">20 TL</span></li>
+      <li><span>🍵 Bitki Çayları</span><span class="price">80 TL</span></li>
+      <li><span>☕ Fincan Çay</span><span class="price">40 TL</span></li>
+      <li><span>☕ Türk Kahvesi</span><span class="price">70 TL</span></li>
+      <li><span>☕ Dibek Kahvesi</span><span class="price">90 TL</span></li>
+      <li><span>🧿 Damla Sakızlı Kahve</span><span class="price">90 TL</span></li>
+      <li><span>💥 Osmanlı Kahvesi</span><span class="price">90 TL</span></li>
+      <li><span>🍓 Dağ Çilekli Kahve</span><span class="price">90 TL</span></li>
+      <li><span>☕ Americano</span><span class="price">90 TL</span></li>
+      <li><span>☕ Latte</span><span class="price">110 TL</span></li>
+      <li><span>☕ Cafe Latte</span><span class="price">110 TL</span></li>
+      <li><span>☕ Cappuccino</span><span class="price">110 TL</span></li>
+      <li><span>☕ Macchiato</span><span class="price">130 TL</span></li>
+      <li><span>☕ Espresso</span><span class="price">80 TL</span></li>
+      <li><span>☕ Sütlü Nescafe</span><span class="price">100 TL</span></li>
+      <li><span>☕ Nescafe</span><span class="price">70 TL</span></li>
+      <li><span>🍫 Sıcak Çikolata</span><span class="price">110 TL</span></li>
+      <li><span>🥣 Sahlep</span><span class="price">100 TL</span></li>
+    </ul>
+  </section>
+
+  <section class="menu-section soguk">
+    <h2>🧊 Soğuk İçecekler</h2>
+    <ul>
+      <li><span>🥤 Cola, Fanta</span><span class="price">70 TL</span></li>
+      <li><span>🥛 Ayran</span><span class="price">30 TL</span></li>
+      <li><span>🍋 Limonata</span><span class="price">90 TL</span></li>
+      <li><span>💧 Maden Suyu</span><span class="price">30 TL</span></li>
+      <li><span>🍓 Meyveli Soda</span><span class="price">45 TL</span></li>
+      <li><span>🍫 Soğuk Çikolata</span><span class="price">120 TL</span></li>
+      <li><span>🥤 Milkshake</span><span class="price">120 TL</span></li>
+      <li><span>🧊 Ice Macchiato</span><span class="price">140 TL</span></li>
+      <li><span>🧊 Ice Latte</span><span class="price">120 TL</span></li>
+      <li><span>🧊 Ice Americano</span><span class="price">100 TL</span></li>
+      <li><span>🍹 Kokteyl</span><span class="price">90 TL</span></li>
+      <li><span>🍇 Meyve Suyu</span><span class="price">60 TL</span></li>
+      <li><span>🧃 Gazoz</span><span class="price">60 TL</span></li>
+      <li><span>🥛 Süt (180ml)</span><span class="price">35 TL</span></li>
+    </ul>
+  </section>
+
+  <section class="menu-section yiyecek">
+    <h2>🍔 Yiyecekler</h2>
+    <ul>
+      <li><span>🍔 Hamburger</span><span class="price">110 TL</span></li>
+      <li><span>🍗 Piliçburger</span><span class="price">110 TL</span></li>
+      <li><span>🧀 Cheeseburger</span><span class="price">120 TL</span></li>
+      <li><span>🍔 Doubleburger</span><span class="price">140 TL</span></li>
+      <li><span>🧀 Doublecheeseburger</span><span class="price">150 TL</span></li>
+      <li><span>🍗 Tavuk Izgara</span><span class="price">250 TL</span></li>
+      <li><span>🍗 Tavuk Pane + Patates</span><span class="price">225 TL</span></li>
+      <li><span>🥪 Kaşarlı Tost</span><span class="price">90 TL</span></li>
+      <li><span>🥪 Karışık Tost</span><span class="price">100 TL</span></li>
+      <li><span>🫓 Kaşarlı Gözleme</span><span class="price">130 TL</span></li>
+      <li><span>🫓 Karışık Gözleme</span><span class="price">150 TL</span></li>
+      <li><span>🫓 Kıymalı Gözleme</span><span class="price">180 TL</span></li>
+      <li><span>🫓 Tavuklu Gözleme</span><span class="price">180 TL</span></li>
+      <li><span>🍟 Patates Kızartması</span><span class="price">100 TL</span></li>
+      <li><span>🍳 Kahvaltı</span><span class="price">240 TL</span></li>
+      <li><span>🍳 Menemen</span><span class="price">160 TL</span></li>
+      <li><span>🍳 Sucuklu Yumurta</span><span class="price">140 TL</span></li>
+      <li><span>🍳 Sahanda Yumurta</span><span class="price">120 TL</span></li>
+      <li><span>🥗 Salata Söğüş</span><span class="price">100 TL</span></li>
+      <li><span>🧀 Peynir Tabağı</span><span class="price">130 TL</span></li>
+      <li><span>🥪 Ayvalık Kumrusu</span><span class="price">170 TL</span></li>
+      <li><span>🥪 Ayvalık Tostu</span><span class="price">140 TL</span></li>
+    </ul>
+  </section>
+
+  <section class="menu-section tatli">
+    <h2>🍰 Tatlılar</h2>
+    <ul>
+      <li><span>🍰 Tiramisu</span><span class="price">160 TL</span></li>
+      <li><span>🍫 Çikolatalı Pasta</span><span class="price">160 TL</span></li>
+      <li><span>🍮 Monolatte</span><span class="price">170 TL</span></li>
+      <li><span>🍮 Pişmiş Sufle</span><span class="price">180 TL</span></li>
+      <li><span>🥜 Fıstık Rüyası</span><span class="price">180 TL</span></li>
+      <li><span>🍓 Frambuazlı Cheesecake</span><span class="price">160 TL</span></li>
+      <li><span>🍇 Orman Meyveli Pasta</span><span class="price">180 TL</span></li>
+      <li><span>🧁 Ev Yapımı Kek Dilimi</span><span class="price">25 TL</span></li>
+    </ul>
+  </section>
+
+  <section class="menu-section pizza">
+    <h2>🍕 Pizza Çeşitleri</h2>
+    <ul>
+      <li><span>🍕 Margherita (Küçük)</span><span class="price">170 TL</span></li>
+      <li><span>🍕 Margherita (Orta)</span><span class="price">300 TL</span></li>
+      <li><span>🍕 Red Meat (Küçük)</span><span class="price">190 TL</span></li>
+      <li><span>🍕 Red Meat (Orta)</span><span class="price">340 TL</span></li>
+      <li><span>🍕 Chicken (Küçük)</span><span class="price">190 TL</span></li>
+      <li><span>🍕 Chicken (Orta)</span><span class="price">340 TL</span></li>
+      <li><span>🍕 Super Mix (Küçük)</span><span class="price">210 TL</span></li>
+      <li><span>🍕 Super Mix (Orta)</span><span class="price">380 TL</span></li>
+      <li><span>🍕 Turkish Pizza (Küçük)</span><span class="price">250 TL</span></li>
+      <li><span>🍕 Turkish Pizza (Orta)</span><span class="price">430 TL</span></li>
+      <li><span>🍕 Yeşil Beyaz (Küçük)</span><span class="price">220 TL</span></li>
+      <li><span>🍕 Yeşil Beyaz (Orta)</span><span class="price">390 TL</span></li>
+      <li><span>🍕 Karides Pizza (Küçük)</span><span class="price">250 TL</span></li>
+      <li><span>🍕 Karides Pizza (Orta)</span><span class="price">430 TL</span></li>
+      <li><span>🍕 Cheese Dream (Küçük)</span><span class="price">200 TL</span></li>
+      <li><span>🍕 Cheese Dream (Orta)</span><span class="price">350 TL</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    📍 Cafe Alem | ☎ 0555 123 4567 | 📱 @cafealem | 🔗 Wi-Fi: cafealem123
+  </footer>
+
+  <script>
+    function filterMenu(category) {
+      const sections = document.querySelectorAll('.menu-section');
+      sections.forEach(section => {
+        if (category === 'all') {
+          section.style.display = 'block';
+        } else {
+          section.style.display = section.classList.contains(category) ? 'block' : 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
